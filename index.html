@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #131a25;
+            font-family: sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 350px;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            animation: rotate3D 30s linear infinite;
+            /*Contoral the speed*/
+        }
+
+        .container span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+            transition: transform 1s;
+        }
+
+        .container img {
+            height: 350px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(255, 255, 255, 0.233);
+        }
+
+        @keyframes rotate3D {
+            form {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+
+            to {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="pic/Normal-pic/PIC/cool.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D image</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- write the address to the pic -->
+        <span style="--i: 1"><img src="pic/1.jpg" alt="Image"></span>
+
+        <span style="--i: 2"><img src="pic/2.jpg" alt="Image"></span>
+
+        <span style="--i: 3"><img src="pic/3.jpg" alt="Image"></span>
+
+        <span style="--i: 4"><img src="pic/4.jpg" alt="Image"></span>
+
+        <span style="--i: 5"><img src="pic/5.jpg" alt="Image"></span>
+
+        <span style="--i: 6"><img src="pic/6.jpg" alt="Image"></span>
+
+        <span style="--i: 7"><img src="pic/7.jpg" alt="Image"></span>
+
+        <span style="--i: 8"><img src="pic/8.jpg" alt="Image"></span>
+
+        <span style="--i: 9"><img src="pic/9.jpg" alt="Image"></span>
+
+        <!-- <span style="--i: 10"><img src="pic/2.jpg" alt="Image"></span> -->
+
+    </div>
+</body>
+
+</html>
